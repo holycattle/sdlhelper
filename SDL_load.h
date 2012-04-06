@@ -47,3 +47,15 @@ SDL_Surface *loadOptimizedSurface( std::string filename ) {
 	//Return the optimized surface
 	return optimizedImage;
 }
+
+void applySurface( int x, int y, SDL_Surface* source, SDL_Surface* destination, SDL_Rect* clip = NULL ) {
+	//Holds offsets
+	SDL_Rect offset;
+
+	//Get offsets
+	offset.x = x;
+	offset.y = y;
+
+	//Blit
+	SDL_BlitSurface( source, clip, destination, &offset );
+}
