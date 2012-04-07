@@ -2,7 +2,7 @@
 #include "SDL/SDL_image.h"
 #include "SDL/SDL_ttf.h"
 
-bool init(std::string title, int SCREEN_WIDTH, int SCREEN_HEIGHT, int SCREEN_BPP) {
+bool init(const char* title, SDL_Surface* screen, int SCREEN_WIDTH, int SCREEN_HEIGHT, int SCREEN_BPP) {
 	//Initialize all SDL subsystems
 	if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 ) {
 		return false;
@@ -17,7 +17,7 @@ bool init(std::string title, int SCREEN_WIDTH, int SCREEN_HEIGHT, int SCREEN_BPP
 	}
 
 	//Set the window caption
-	SDL_WM_SetCaption( title.c_str, NULL );
+	SDL_WM_SetCaption( title, NULL );
 
 	//If everything initialized fine
 	return true;

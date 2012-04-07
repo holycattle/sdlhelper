@@ -1,10 +1,11 @@
 #include "SDL_load.h"
 
 //for testing
-class GameObject: public SDL_Surface {
+class GameObject {
 	public:
 		int x, y;
 		std::string name;
+		SDL_Surface* surface;
 		GameObject();
 		void show();
 		virtual void handleInput() = 0;
@@ -40,7 +41,7 @@ class Timer {
 		void stop();
 		void pause();
 		void unpause();
-		int getCurrentTime();
+		int getTicks();
 		bool isStarted();
 		bool isPaused();
 };
